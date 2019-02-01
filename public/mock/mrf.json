@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "NPS ЕЛК",
+    "type": "MapMRF",
+    "personId": 1,
+    "value": [
+      {
+        "period": "2019-01",
+        "mrfId": "volga",
+        "targetValue": 25,
+        "value": 21,
+        "tmp": "average"
+      },
+      {
+        "period": "2019-01",
+        "mrfId": "nw",
+        "targetValue": 17,
+        "value": 12,
+        "tmp": "good"
+      }
+    ]
+  }
+]

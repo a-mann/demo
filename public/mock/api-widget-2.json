@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "name": "CSI ЕЛК",
+  "type": "OverlapBars",
+  "value": [{
+    "period": "2019-01",
+    "mrfId": 1,
+    "targetValue": 7.5,
+    "value": 7.4,
+    "tmp": "good"
+  }]
+}

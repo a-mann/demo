@@ -1,0 +1,16 @@
+.filter{
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+
+    &__item{
+        max-width: 100%;
+        //flex: 0 0 calc(50% - .25rem);
+        width: calc(50% - .25rem);
+
+        &:not(:first-child){
+            margin-left: .5rem;
+        }
+    }
+}

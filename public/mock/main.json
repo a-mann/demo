@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "NPS ЕЛК",
+    "type": "OverlapBars",
+    "personId": 1,
+    "value": [{
+      "period": "2019-01",
+      "mrfId": 1,
+      "targetValue": 25,
+      "value": 21,
+      "tmp": "average"
+    }]
+  },
+  {
+    "id": 2,
+    "name": "CSI ЕЛК",
+    "type": "OverlapBars",
+    "value": [{
+      "period": "2019-01",
+      "mrfId": 1,
+      "targetValue": 7.5,
+      "value": 7.4,
+      "tmp": "good"
+    }]
+  },
+  {
+    "id": 3,
+    "name": "SL ИСО+ТП",
+    "type": "OverlapBars",
+    "value": [{
+      "period": "2019-01",
+      "mrfId": 1,
+      "targetValue": 80,
+      "value": 49,
+      "tmp": "bad"
+    }]
+  },
+  {
+    "id": 4,
+    "name": "Активность в ЕЛК",
+    "type": "ActivityELK",
+    "value": [
+      {
+        "period": "2019-01",
+        "mrfId": 1,
+        "value": 0.18
+      },
+      {
+        "period": "2018-12",
+        "mrfId": 1,
+        "value": 0.11
+      },
+      {
+        "period": "2018-11",
+        "mrfId": 1,
+        "value": 2
+      },
+      {
+        "period": "2018-10",
+        "mrfId": 1,
+        "value": 1.4
+      },
+      {
+        "period": "2018-09",
+        "mrfId": 1,
+        "value": 1.7
+      },
+      {
+        "period": "2018-08",
+        "mrfId": 1,
+        "value": 1.4
+      },
+      {
+        "period": "2018-07",
+        "mrfId": 1,
+        "value": 1.34
+      },
+      {
+        "period": "2018-06",
+        "mrfId": 1,
+        "value": 0.7
+      },
+      {
+        "period": "2018-05",
+        "mrfId": 1,
+        "value": 1.9
+      },
+      {
+        "period": "2018-04",
+        "mrfId": 1,
+        "value": 1.25
+      },
+      {
+        "period": "2018-03",
+        "mrfId": 1,
+        "value": 1.4
+      },
+      {
+        "period": "2018-02",
+        "mrfId": 1,
+        "value": 1.11
+      }
+    ]
+  }
+]

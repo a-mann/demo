@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "NPS ЕЛК",
+    "type": "SINGLE_VALUE"
+  },
+  {
+    "id": 2,
+    "name": "CSI ЕЛК",
+    "type": "SINGLE_VALUE"
+  },
+  {
+    "id": 3,
+    "name": "SL ИСО+ТП",
+    "type": "SINGLE_VALUE"
+  },
+  {
+    "id": 4,
+    "name": "Активность в ЕЛК",
+    "type": "MULTI_VALUE"
+  }
+]

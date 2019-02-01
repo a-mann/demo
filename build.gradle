@@ -1,0 +1,92 @@
+plugins {
+    id "com.liferay.node" version "4.6.2"
+    id 'com.bmuschko.docker-remote-api' version '4.2.0'
+}
+
+import com.bmuschko.gradle.docker.tasks.image.*
+
+// Измените следующие строки, чтобы переключиться на установленную в системе копию NodeJS
+//node.download = false
+node.nodeVersion = "10.15.0"
+node.nodeDir = "$buildDir/node"
+
+def npmBuildDir = "rtk"
+
+npmRunBuild {
+    inputs.files(fileTree(dir: "src", include: "**/*"))
+    outputs.dir {
+        project.file("$buildDir/$npmBuildDir")
+    }
+}
+
+task createDockerfile() {
+    dependsOn npmRunBuild
+    inputs.files(file('Dockerfile'), file('wait-for'))
+    outputs.file("$buildDir/docker/Dockerfile")
+    doLast {
+        copy {
+            from file('Dockerfile')
+            from file('wait-for')
+            into("$buildDir/docker")
+        }
+    }    
+}
+
+task prepareReactForDocker() {
+    dependsOn npmRunBuild
+    inputs.files(fileTree(dir: "$buildDir/$npmBuildDir", include: "**/*"))
+    outputs.dir {
+        project.file("$buildDir/docker/$npmBuildDir")
+    }
+    doLast {
+        copy {
+            from ("$buildDir") {
+                include "$npmBuildDir/**"
+            }
+            from file('default.conf')
+            into("$buildDir/docker")
+        }
+    }
+}
+
+task prepareNginxForDocker() {
+    dependsOn npmRunBuild
+    inputs.files(fileTree(dir: "nginx", include: "**/*"))
+    outputs.dir {
+        project.file("$buildDir/docker/nginx")
+    }
+    doLast {
+        copy {
+            from ("nginx")
+            into("$buildDir/docker/nginx")
+        }
+    }
+}
+
+task dockerBuildImage(type: DockerBuildImage) {
+    dependsOn createDockerfile
+    dependsOn prepareNginxForDocker
+    dependsOn prepareReactForDocker
+    inputs.files(fileTree(dir: "$buildDir/docker", include: "**/*"))
+    inputDir = file("$buildDir/docker")
+    tags.add("$rootProject.name/$project.name:latest")
+}
+
+task build {
+    dependsOn npmRunBuild
+    group 'Build'
+}
+
+task makeZip(type: Zip) {
+    dependsOn build
+    from "$buildDir/$npmBuildDir"
+    include '**/*'
+    archiveName = "$rootProject.name-$project.name-$rootProject.version" + '.zip'
+    destinationDir(file("$buildDir/zip"))
+}
+
+task clean(type: Delete) {
+    dependsOn cleanNPM
+    delete 'build'
+    group 'Build'
+}

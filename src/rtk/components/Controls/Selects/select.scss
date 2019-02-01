@@ -1,0 +1,175 @@
+.select-control{
+    &__control{
+        width: 100%;
+        height: 3.125rem; //50px
+        background-color: $color-white;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &--is-disabled{
+            opacity: .6;
+        }
+    }
+
+    &__placeholder{
+        color: rgba($color-txt-title, .25);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-sizing: border-box;
+    }
+
+    &__value-container{
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 0 1rem .875rem;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+
+        > input{
+            position: absolute;
+        }
+
+        @at-root .select-control_with-nav &{
+            padding-left: 0;
+        }
+    }
+
+    &__single-value{
+        max-width: 100%;
+        color: $color-txt-title;
+        font-size: .875rem; //14px
+        line-height: 1.28;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+
+        @at-root .select-control_with-nav &{
+            text-align: center;
+
+            &:first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__indicators{
+        margin-left: auto;
+    }
+
+    &__indicator{
+        position: relative;
+    }
+
+    &__dropdown-indicator{
+        cursor: pointer;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.375rem;
+
+        @at-root .select-control--is-disabled &{
+            position: relative;
+            visibility: hidden;
+            z-index: -1;
+        }
+    }
+
+    &__menu{
+        width: 100%;
+        padding: 6px 0;
+        background-color: $color-white;
+        border-top: 1px solid #787E87;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        box-sizing: border-box;
+
+        &-list{
+            max-height: 300px;
+            overflow-y: auto;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+            box-sizing: border-box;
+        }
+    }
+
+    &__option{
+        max-width: 100%;
+        padding: .625rem 1rem;
+        font-size: .875rem;
+        color: $color-txt-title;
+        line-height: 1.28;
+        transition: background-color ease .3s;
+        background-color: transparent;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &--is-focused,
+        &--selected,
+        &:hover{
+            background-color: $color-txt;
+        }
+
+        @at-root .select-control_with-nav &{
+            text-align: center;
+
+            &:first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.select-nav{
+    background-color: #fff;
+    position: relative;
+    //display: grid;
+    //grid-template-rows: auto;
+    //grid-template-columns: auto 1fr auto;
+    //
+    //&__prev,
+    //&__next,
+    //&__display{
+    //    grid-row: 1;
+    //}
+
+    &__display{
+        padding: 0 2.375rem;
+        z-index: 1;
+    }
+
+    &__prev,
+    &__next{
+        width: 2.375rem;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        z-index: 2;
+
+    }
+
+    &__prev{
+        left: 0;
+        .ico-arrow{
+            transform: rotate(90deg);
+        }
+    }
+
+    &__next{
+        right: 0;
+        .ico-arrow{
+            transform: rotate(-90deg);
+        }
+    }
+}

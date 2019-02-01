@@ -1,0 +1,56 @@
+.auth{
+    height: 100vh;
+    overflow: hidden;
+
+    &__wrap{
+        @extend %c-wrap;
+
+        max-width: 23.4375rem; //375px
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-top: 70px;
+
+        &:before{
+            content: '';
+            right: -185px;
+            top: 0;
+            background: url('/static/img/bg-corner.svg') no-repeat 100% 0;
+            width: 2050px;
+            height: 974px;
+            z-index: 1;
+            position: absolute;
+        }
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.375rem;
+    position: relative;
+    z-index: 10;
+    margin-top: 3.75rem;
+
+
+    &__row{
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    &__btn{
+        @extend %btn;
+
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 4px;
+        color: $color-white;
+        height: 3em;
+        background-color: $color-action;
+        transition: background-color ease .3s;
+
+        &:hover{
+            background-color: rgba($color-action,.8);
+        }
+    }
+}

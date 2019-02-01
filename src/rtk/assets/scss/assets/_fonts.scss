@@ -1,0 +1,34 @@
+$font-dir: '../fonts/';
+
+@font-face {
+    font-family: 'RostelecomBasis';
+    src: url($font-dir + 'RostelecomBasis-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RostelecomBasis-Medium';
+    src: url($font-dir + 'RostelecomBasis-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RostelecomBasis-Bold';
+    src: url($font-dir + 'RostelecomBasis-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RostelecomBasis-Light';
+    src: url($font-dir + 'RostelecomBasis-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//$ff-base: 'RostelecomBasis', sans-serif;
+//$ff-mid: 'RostelecomBasis-Medium', sans-serif;
+//$ff-bold: 'RostelecomBasis-Bold', sans-serif;
+//$ff-light: 'RostelecomBasis-Light', sans-serif;

@@ -1,0 +1,110 @@
+.dashboard-wrap{
+    margin-top: .5rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-person{
+    height: 100%;
+    width: 3.5rem; //56px
+    background-color: $color-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.dashboard{
+    background-color: $color-white;
+    padding: 1.25rem;
+    margin-top: .5rem;
+    flex-shrink: 0;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
+    transform: translateX(0);
+    transition: transform .2s ease;
+
+    @at-root .dashboard-wrap &{
+        margin-top: 0;
+    }
+
+    &.is-swiped{
+        transform: translateX(3.5rem);
+        overflow: visible;
+    }
+
+    &__row{
+        display: flex;
+    }
+
+    &__col{
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:last-child{
+            margin-left: auto;
+            padding-left: 1.5rem;
+        }
+    }
+
+    &__title{
+        color: $color-txt-title;
+        font-family: $ff-bold;
+        //text-transform: uppercase;
+        font-size: .875rem; //14px
+
+        @at-root .dashboard_lg &{
+            text-transform: none;
+            margin-bottom: 1em;
+        }
+    }
+
+    &__data{
+        font-family: $ff-light;
+        font-size: 2.3125rem; //37px
+        line-height: 1.25;
+    }
+
+    &__notes{
+        color: $color-gray;
+        font-size: .625rem; //10px
+    }
+
+    &__graph{
+        margin-bottom: .5rem;
+        position: relative;
+        // margin-top: auto; //TODO: убрать, когда будет реальный график
+    }
+
+    &__indicators{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: auto;
+
+        & span{
+            color: $color-gray;
+            font-size: .625rem; //10px
+        }
+    }
+
+    &__map{
+        margin: -1.75rem auto 0;
+        display: block;
+    }
+}
+
+.graph-svg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

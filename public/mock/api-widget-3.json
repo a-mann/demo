@@ -1,0 +1,12 @@
+{
+  "id": 3,
+  "name": "SL ИСО+ТП",
+  "type": "OverlapBars",
+  "value": [{
+    "period": "2019-01",
+    "mrfId": 1,
+    "targetValue": 80,
+    "value": 49,
+    "tmp": "bad"
+  }]
+}

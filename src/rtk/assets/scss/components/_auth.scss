@@ -1,0 +1,25 @@
+.auth{
+    height: 100vh;
+    overflow: hidden;
+
+    &__wrap{
+        @extend %c-wrap;
+
+        max-width: 23.4375rem; //375px
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-top: 70px;
+
+        &:before{
+            content: '';
+            right: -185px;
+            top: 0;
+            background: url('../img/bg-corner.svg') no-repeat 100% 0;
+            width: 2050px;
+            height: 974px;
+            z-index: 1;
+            position: absolute;
+        }
+    }
+}

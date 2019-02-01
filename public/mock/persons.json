@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "indicator": "NPS ЕЛК",
+    "mrf": "Волга",
+    "name": "Мухачева Татьяна",
+    "photo": "muhacheva.png",
+    "contacts": {
+      "phone": "+7 123 456-78-90",
+      "email": "Tatyana.Mukhacheva@rt.ru",
+      "chat": "Tatyana.Mukhacheva"
+    }
+  }
+]

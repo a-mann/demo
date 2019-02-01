@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name": "NPS ЕЛК",
+  "type": "OverlapBars",
+  "personId": 1,
+  "value": [
+    {
+      "period": "2019-01",
+      "mrfId": 1,
+      "targetValue": 25,
+      "value": 21,
+      "tmp": "average"
+    }
+  ]
+}
